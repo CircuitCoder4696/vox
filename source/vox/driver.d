@@ -125,15 +125,12 @@ struct Driver
 		foreach (ref pass; passes)
 		{
 			auto time1 = currTime;
-
 			// throws immediately on unrecoverable error or ICE
-			pass.run(context, pass.subPasses);
-
+				pass.run(context, pass.subPasses);
 			auto time2 = currTime;
 			pass.duration = time2-time1;
-
 			// throws if there were recoverable error in the pass
-			context.throwOnErrors;
+				context.throwOnErrors;
 		}
 	}
 
