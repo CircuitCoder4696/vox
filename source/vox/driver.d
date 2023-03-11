@@ -124,6 +124,7 @@ struct Driver
 	{
 		foreach (ref pass; passes)
 		{
+			writeln(pass);
 			auto time1 = currTime;
 			// throws immediately on unrecoverable error or ICE
 				pass.run(context, pass.subPasses);
